@@ -58,7 +58,7 @@ const ContextProvider = ({ children }) => {
             socket.emit('calluser', {userToCall: id, signalDate: data, from: me, name})
         });
 
-        peer.on('stream', (currentStream) > {
+        peer.on('stream', (currentStream) => {
             userVideo.current.srcObject = currentStream;
         })
     };
