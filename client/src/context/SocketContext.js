@@ -60,7 +60,15 @@ const ContextProvider = ({ children }) => {
 
         peer.on('stream', (currentStream) => {
             userVideo.current.srcObject = currentStream;
-        })
+        });
+
+        socket.on('callaccepted', (signal) => {
+            setCallAccepted(true);
+
+            peer.signal(signal);
+        });
+
+        connectionRef.current = peer;
     };
 
     const leaveCall = () => {};
