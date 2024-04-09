@@ -24,13 +24,13 @@ io.on("connection", (socket) => {
         socket.broadcast.emit("callended");
     });
 
-    socket.io("calluser", ({ userToCall, signalData, from, name }) => {
+    socket.on("calluser", ({ userToCall, signalData, from, name }) => {
         io.on(
             userToCall().emit("calluser", { signal: signalData, from, name })
         );
     });
 
-    socket.io("answercall", (data) => {
+    socket.on("answercall", (data) => {
         io.on(data.to).emit("callaccepted", data.signal);
     });
 });
