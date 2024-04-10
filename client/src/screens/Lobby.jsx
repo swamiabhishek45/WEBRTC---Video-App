@@ -1,9 +1,10 @@
 import React from 'react'
 
+
 const Lobby = () => {
   return (
-    <div>Lobby</div>
-  )
+    <h1>hello</h1>
+    )
 }
 
 export default Lobby
