@@ -1,9 +1,9 @@
-const {Server}  = require('socket.io');
+const { Server } = require("socket.io");
 
-const io = new Server(8000);
+const io = new Server(8000, {
+    cors: true,
+});
 
-io.on('connection', (socket) => {
-    socket.emit("me", socket.id);
-
-    console.log('Socket connected', socket.id);
-})
+io.on("connection", (socket) => {
+    console.log("Socket connected :", socket.id);
+});
