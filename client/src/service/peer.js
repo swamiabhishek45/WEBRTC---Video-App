@@ -30,7 +30,7 @@ class PeerService {
             );
         }
     }
-    
+
     async getOffer() {
         if (this.peer) {
             const offer = await this.peer.createOffer();
